@@ -11,16 +11,15 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingTop="20dp"
-        android:text="Nhập Username" />
+        android:hint="Nhập Username" />
 
     <EditText
         android:id="@+id/edpassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
         android:paddingTop="40dp"
-        android:text="Nhập password" />
+        android:hint="Nhập password" />
 
     <EditText
         android:id="@+id/edphonenumber"
@@ -30,7 +29,7 @@
         android:inputType="phone"
         android:maxLength="10"
         android:paddingTop="40dp"
-        android:text="Nhập Số điện thoại" />
+        android:hint="Nhập Số điện thoại" />
 
     <EditText
         android:id="@+id/edfirstandlastname"
@@ -39,7 +38,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingTop="40dp"
-        android:text="Nhập Fullname" />
+        android:hint="Nhập Fullname" />
 
     <EditText
         android:id="@+id/edemail"
@@ -48,7 +47,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:paddingTop="40dp"
-        android:text="Nhập Email" />
+        android:hint="Nhập Email" />
 
     <LinearLayout
 
