@@ -66,7 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/custombackground"
+            android:background="@drawable/backgoundcolorone"
             android:text="Add"
             android:textColor="#ffff" />
 
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/custombackground"
+            android:background="@drawable/backgoundcolorone"
             android:text="Cancel"
             android:textColor="#ffff" />
     </LinearLayout>
