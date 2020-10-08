@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="300dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="55dp"
+        android:layout_height="wrap_content">
         <EditText
             android:id="@+id/edusername"
             android:layout_width="match_parent"
@@ -17,13 +18,20 @@
             android:paddingTop="20dp"
             android:hint="Nhập Username" />
 
-        <EditText
-            android:id="@+id/edpassword"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:paddingTop="40dp"
-            android:hint="Nhập password" />
+            android:paddingTop="20dp"
+            app:passwordToggleEnabled="true"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nhập password"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
             android:id="@+id/edphonenumber"
@@ -53,35 +61,31 @@
             android:paddingTop="40dp"
             android:hint="Nhập Email" />
 
-        <LinearLayout
+    </LinearLayout>
 
-            android:layout_width="409dp"
-            android:layout_height="278dp"
-            android:layout_marginStart="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="1dp"
-            android:layout_marginRight="1dp"
-            android:orientation="horizontal"
-            android:paddingTop="50dp">
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginLeft="90dp"
+        android:orientation="horizontal"
+        android:paddingTop="50dp">
 
-            <Button
-                android:id="@+id/btnadd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/backgoundcolorone"
-                android:text="Add"
-                android:textColor="#ffff" />
+        <Button
+            android:id="@+id/btnadd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/backgoundcolorone"
+            android:text="Add"
+            android:textColor="#ffff" />
 
-            <Button
-                android:id="@+id/btncancel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/backgoundcolorone"
-                android:text="Cancel"
-                android:textColor="#ffff" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btncancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/backgoundcolorone"
+            android:text="Cancel"
+            android:textColor="#ffff" />
     </LinearLayout>
 </LinearLayout>

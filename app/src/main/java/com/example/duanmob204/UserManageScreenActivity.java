@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.duanmob204.DAO.UserDAO;
+import com.example.duanmob204.adapter.UserAdapter;
 import com.example.duanmob204.database.MySqlite;
 import com.example.duanmob204.model.User;
 
@@ -35,13 +36,13 @@ public class UserManageScreenActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.add,menu);
+        getMenuInflater().inflate(R.menu.add, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.add) {
+        if (item.getItemId() == R.id.adduser) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             View view = LayoutInflater.from(this).inflate(R.layout.add_user_dialog, null);
             builder.setView(view);
@@ -57,27 +58,25 @@ public class UserManageScreenActivity extends AppCompatActivity {
             btnadd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    User user=new User();
-                    user.getUsername()= edusername.getText().toString().trim();
-                    nguoiDung.ten = editTextTextPersonName6.getText().toString().trim();
-                    nguoiDung.password = editTextTextPassword.getText().toString().trim();
-                    nguoiDung.sdt = editTextPhone.getText().toString().trim();
-
-
-
+                    User user = new User();
+                    user.username = edusername.getText().toString().trim();
+                    user.password = edpassword.getText().toString().trim();
+                    user.phonenumber = edphonenumber.getText().toString().trim();
+                    user.firstandlastname = edfirstandlastname.getText().toString().trim();
+                    user.email = edemail.getText().toString().trim();
                     UserDAO userDAO = new UserDAO(mySqlite);
 
-                    boolean ketQua = userDAO.addUser(nguoiDung);
+                    boolean ketQua = userDAO.addUser(user);
                     if (ketQua) {
                         Toast.makeText(UserManageScreenActivity.this,
                                 "THANH CONG!!!", Toast.LENGTH_SHORT).show();
                         alertDialog.dismiss();
 
-                        List<User> nguoiDungList = userDAO.getAllUsers();
-                        NguoiDungAdapter nguoiDungAdapter = new NguoiDungAdapter(nguoiDungList);
-                        listView.setAdapter(nguoiDungAdapter);
+                        List<User> userList = userDAO.getAllUsers();
+                        UserAdapter userAdapter = new UserAdapter(userList);
+                        listView.setAdapter(userAdapter);
                     } else {
-                        Toast.makeText(QLNguoiDungActivity.this,
+                        Toast.makeText(UserManageScreenActivity.this,
                                 "KHONG THANH CONG!!!", Toast.LENGTH_SHORT).show();
                     }
 
@@ -85,7 +84,7 @@ public class UserManageScreenActivity extends AppCompatActivity {
             });
 
 
-            button4.setOnClickListener(new View.OnClickListener() {
+            btncancel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     alertDialog.dismiss();
