@@ -35,7 +35,24 @@ public class UserDAO {
         else return false;
 
     }
+    public boolean updateUser(User user) {
+        // xin quyen 1
+        SQLiteDatabase sqLiteDatabase = mySqlite.getWritableDatabase();
+        // ghép cặp giá trị vào tên cột 2
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("username", user.username);
+        contentValues.put("password", user.password);
+        contentValues.put("phonenumber", user.phonenumber);
+        contentValues.put("firstandlastname", user.firstandlastname);
+        contentValues.put("email", user.email);
+        // truy vấn 3
+        long kq = sqLiteDatabase.update("USER", contentValues, "username=?",
+                new String[]{user.username});
 
+        if (kq > 0) return true;
+        else return false;
+
+    }
     // del
     public boolean delUser(String username) {
         // xin quyen 1

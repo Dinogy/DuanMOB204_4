@@ -9,16 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeScreenActivity">
-
-        </activity>
+        <activity android:name=".updatescreen.UserUpdateActivity"></activity>
+        <activity android:name=".HomeScreenActivity"></activity>
         <activity android:name=".SignUpScreenActivity" />
-        <activity android:name=".UserManageScreenActivity" >
-
-        </activity>
-        <activity android:name=".LoginScreenActivity">
-
-        </activity>
+        <activity android:name=".UserManageScreenActivity"></activity>
+        <activity android:name=".LoginScreenActivity"></activity>
         <activity android:name=".BillManageScreenActivity" />
         <activity android:name=".BookManageScreenActivity" />
         <activity android:name=".CategoryManageScreenActivity" />

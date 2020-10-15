@@ -39,9 +39,9 @@ private List<User> userList;
                 viewGroup, false);
 
         TextView tvName = view.findViewById(R.id.txtName);
-        tvName.setText(userList.get(i).username + " - " + userList.get(i).firstandlastname);
+        tvName.setText("UserName: "+userList.get(i).username + " - " +"FullName: "+ userList.get(i).firstandlastname);
         TextView tvPhoneNumber=view.findViewById(R.id.txtPhonenumber);
-        tvPhoneNumber.setText(userList.get(i).phonenumber);
+        tvPhoneNumber.setText("PhoneNumber: "+userList.get(i).phonenumber);
 
         view.findViewById(R.id.imgdelete).setOnClickListener(new View.OnClickListener() {
             @Override
